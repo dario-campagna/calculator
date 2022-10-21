@@ -1,3 +1,3 @@
 # Calculator
 
-A calculator to perform arithmetic operation on the command line.
+A calculator to perform arithmetic operations on the command line.
