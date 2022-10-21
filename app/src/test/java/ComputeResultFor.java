@@ -26,4 +26,9 @@ public class ComputeResultFor {
     void minus_3_plus_pi() {
         assertEquals(0.14, new Calculator().compute("-3", "+", "3.14"), 0.000001);
     }
+
+    @Test
+    void nine_times_8_point_5() {
+        assertEquals(76.5, new Calculator().compute("9", "*", "8.5"), 0.000001);
+    }
 }
