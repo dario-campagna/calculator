@@ -24,6 +24,6 @@ public class ComputeResultFor {
 
     @Test
     void minus_3_plus_pi() {
-        assertEquals(0.14, new Calculator().compute("-3", "+", "3.14"));
+        assertEquals(0.14, new Calculator().compute("-3", "+", "3.14"), 0.000001);
     }
 }
