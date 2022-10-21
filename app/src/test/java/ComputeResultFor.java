@@ -7,6 +7,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ComputeResultFor {
 
+    private final Calculator calculator = new Calculator();
+
     @ParameterizedTest
     @CsvSource({
             "-3.14, -3.14",
@@ -14,26 +16,19 @@ public class ComputeResultFor {
             "99.99, 99.99"
     })
     void just_a_number(double result, String number) {
-        assertEquals(result, new Calculator().compute(number));
+        assertEquals(result, calculator.compute(number));
     }
 
-    @Test
-    void two_plus_one() {
-        assertEquals(3, new Calculator().compute("2", "+", "1"));
+    @ParameterizedTest
+    @CsvSource({
+            "2, +, 1, 3",
+            "-3, +, 3.14, 0.14",
+            "9, *, 8.5, 76.5",
+            "-4, *, 0, -0.0"
+
+    })
+    void single_operation(String leftOperand, String operator, String rightOperand, double result) {
+        assertEquals(result, calculator.compute(leftOperand, operator, rightOperand), 0.000001);
     }
 
-    @Test
-    void minus_3_plus_pi() {
-        assertEquals(0.14, new Calculator().compute("-3", "+", "3.14"), 0.000001);
-    }
-
-    @Test
-    void nine_times_8_point_5() {
-        assertEquals(76.5, new Calculator().compute("9", "*", "8.5"), 0.000001);
-    }
-
-    @Test
-    void minus4_times_0() {
-        assertEquals(-0.0, new Calculator().compute("-4", "*", "0"));
-    }
 }
