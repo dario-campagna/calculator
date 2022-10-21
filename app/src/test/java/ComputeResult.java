@@ -1,10 +1,7 @@
 import dssc.calculator.Calculator;
 import org.junit.jupiter.api.Test;
 
-import java.util.HashMap;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class ComputeResult {
 
@@ -14,4 +11,9 @@ public class ComputeResult {
         assertEquals(-3.14, calculator.compute("-3.14"));
     }
 
+    @Test
+    void another_number() {
+        Calculator calculator = new Calculator();
+        assertEquals(100, calculator.compute("100"));
+    }
 }
