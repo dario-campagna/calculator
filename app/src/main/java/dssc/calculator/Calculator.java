@@ -18,9 +18,9 @@ public class Calculator {
         return Double.parseDouble(s);
     }
 
-    public double compute(String leftOperand, String operator, String rightOperand) {
-        double leftOp = Double.parseDouble(leftOperand);
-        double rightOp = Double.parseDouble(rightOperand);
-        return operatorToFunction.get(operator).apply(leftOp, rightOp);
+    public double compute(String... args) {
+        double leftOperand = Double.parseDouble(args[0]);
+        double rightOperand = Double.parseDouble(args[2]);
+        return operatorToFunction.get(args[1]).apply(leftOperand, rightOperand);
     }
 }
