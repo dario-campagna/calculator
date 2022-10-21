@@ -21,4 +21,9 @@ public class ComputeResultFor {
     void two_plus_one() {
         assertEquals(3, new Calculator().compute("2", "+", "1"));
     }
+
+    @Test
+    void minus_3_plus_pi() {
+        assertEquals(0.14, new Calculator().compute("-3", "+", "3.14"));
+    }
 }
