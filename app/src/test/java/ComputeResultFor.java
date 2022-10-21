@@ -31,4 +31,9 @@ public class ComputeResultFor {
     void nine_times_8_point_5() {
         assertEquals(76.5, new Calculator().compute("9", "*", "8.5"), 0.000001);
     }
+
+    @Test
+    void minus4_times_0() {
+        assertEquals(-0.0, new Calculator().compute("-4", "*", "0"));
+    }
 }
