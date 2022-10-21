@@ -24,7 +24,8 @@ public class ComputeResultFor {
             "2, +, 1, 3",
             "-3, +, 3.14, 0.14",
             "9, *, 8.5, 76.5",
-            "-4, *, 0, -0.0"
+            "-4, *, 0, -0.0",
+            "4, /, 2, 2"
 
     })
     void single_operation(String leftOperand, String operator, String rightOperand, double result) {
