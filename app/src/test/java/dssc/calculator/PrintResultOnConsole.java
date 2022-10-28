@@ -7,10 +7,10 @@ import java.io.PrintStream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class PrintOnConsole {
+class PrintResultOnConsole {
 
     @Test
-    void result_of_computation_for_single_number() {
+    void for_single_number() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
 
@@ -20,7 +20,7 @@ class PrintOnConsole {
     }
 
     @Test
-    void result_of_computation_for_operation() {
+    void for_arithmetic_operation() {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
 
