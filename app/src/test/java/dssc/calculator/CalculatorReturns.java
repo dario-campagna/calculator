@@ -31,4 +31,10 @@ class CalculatorReturns {
         Calculator calculator = new Calculator();
         assertEquals(10.1, calculator.compute("6","+","4.1"), 0.000001);
     }
+
+    @Test
+    void difference_of_two_number() {
+        Calculator calculator = new Calculator();
+        assertEquals(100.6, calculator.compute("104.6","-","4"), 0.000001);
+    }
 }
