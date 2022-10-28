@@ -6,6 +6,6 @@ public class Calculator {
     }
 
     public double compute(String leftOperand, String operator, String rightOperand) {
-        return 10.1;
+        return Double.parseDouble(leftOperand) + Double.parseDouble(rightOperand);
     }
 }
