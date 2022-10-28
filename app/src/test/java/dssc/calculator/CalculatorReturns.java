@@ -35,4 +35,10 @@ class CalculatorReturns {
         Calculator calculator = new Calculator();
         assertEquals(100.6, calculator.compute("104.6","-","4"), 0.000001);
     }
+
+    @Test
+    void product_of_two_numbers() {
+        Calculator calculator = new Calculator();
+        assertEquals(76.5, calculator.compute("8.5","*","9"), 0.000001);
+    }
 }
