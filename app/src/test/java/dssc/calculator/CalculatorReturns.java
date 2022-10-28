@@ -41,4 +41,10 @@ class CalculatorReturns {
         Calculator calculator = new Calculator();
         assertEquals(76.5, calculator.compute("8.5","*","9"), 0.000001);
     }
+
+    @Test
+    void quotient_of_two_numbers() {
+        Calculator calculator = new Calculator();
+        assertEquals(1.8, calculator.compute("3.6","/","2"), 0.000001);
+    }
 }
