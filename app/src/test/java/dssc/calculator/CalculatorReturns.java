@@ -16,4 +16,10 @@ class CalculatorReturns {
         // Assert
         assertEquals(-3.14, result, 0.000001);
     }
+
+    @Test
+    void another_number() {
+        Calculator calculator = new Calculator();
+        assertEquals(100.93, calculator.compute("100.93"), 0.000001);
+    }
 }
