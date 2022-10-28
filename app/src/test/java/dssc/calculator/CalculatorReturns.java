@@ -10,13 +10,8 @@ class CalculatorReturns {
 
     @Test
     void same_number_for_given_number() {
-        // Arrange
-        String number = "-3.14";
         Calculator calculator = new Calculator();
-        // Act
-        double result = calculator.compute(number);
-        // Assert
-        assertEquals(-3.14, result, 0.000001);
+        assertEquals(-3.14, calculator.compute("-3.14"), 0.000001);
     }
 
     @Test
@@ -29,5 +24,11 @@ class CalculatorReturns {
     void yet_another_number() {
         Calculator calculator = new Calculator();
         assertEquals(0.1, calculator.compute("0.1"), 0.000001);
+    }
+
+    @Test
+    void sum_of_two_number() {
+        Calculator calculator = new Calculator();
+        assertEquals(10.1, calculator.compute("6","+","4.1"), 0.000001);
     }
 }
