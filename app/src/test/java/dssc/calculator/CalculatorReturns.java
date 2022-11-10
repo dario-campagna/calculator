@@ -1,27 +1,27 @@
 package dssc.calculator;
 
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.MethodSource;
+
+import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class CalculatorReturns {
 
-    @Test
-    void same_number_for_given_number() {
+    @ParameterizedTest
+    @MethodSource("singleNumbers")
+    void same_number_for_single_number(String numberAsString, double expected) {
         Calculator calculator = new Calculator();
-        assertEquals(-3.14, calculator.compute("-3.14"), 0.000001);
+        assertEquals(expected, calculator.compute(numberAsString), 0.000001);
     }
 
-    @Test
-    void another_number() {
-        Calculator calculator = new Calculator();
-        assertEquals(100.93, calculator.compute("100.93"), 0.000001);
-    }
-
-    @Test
-    void yet_another_number() {
-        Calculator calculator = new Calculator();
-        assertEquals(0.1, calculator.compute("0.1"), 0.000001);
+    private static Stream<Arguments> singleNumbers() {
+        return Stream.of(
+                Arguments.arguments("-3.14", -3.14)
+        );
     }
 
     @Test
